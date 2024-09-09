@@ -1,0 +1,35 @@
+[package]
+edition = "2021"
+name = "hdf4-src"
+license-file = "ext/COPYING"
+build = "build.rs"
+description = "Build script for compiling hdf4 C library from source."
+links = "hdf4src"
+readme = "README.md"
+categories = ["ffi"]
+exclude = [
+    "ext/bin/**",
+    "ext/c++/**",
+    "ext/examples/**",
+    "ext/fortran/**",
+    "ext/java/**",
+    "ext/release_docs/**",
+    "ext/test/**",
+    "ext/testpar/**",
+    "ext/tools/**",
+    "ext/hl/test/**",
+    "ext/hl/tools/**",
+    "ext/hl/examples/**",
+]
+
+[features]
+hl = []
+zlib = ["dep:libz-sys"]
+deprecated = []
+threadsafe = []
+
+[dependencies]
+libz-sys = { version = "1", optional = true, features = ["static", "libc"] }
+
+[build-dependencies]
+cmake = "0.1"

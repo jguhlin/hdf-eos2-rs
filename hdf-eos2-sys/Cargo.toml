@@ -1,0 +1,16 @@
+[package]
+name = "hdf-eos5-sys"
+version = "0.1.0"
+edition = "2021"
+links = "libhdf-eos5"
+
+[dependencies]
+# Use git instead: https://github.com/aldanor/hdf5-rust/tree/master/hdf5-sys
+# hdf5-sys = { version = "0.8.1", features = ["deprecated", "static"] }
+hdf5-sys = { git = "https://github.com/aldanor/hdf5-rust/", features = ["deprecated", "static", "hl"] }
+
+[build-dependencies]
+bindgen = "0.70"
+cc = "1.0"
+# hdf5-sys = { version = "0.8.1", features = ["static"] }
+hdf5-sys = { git = "https://github.com/aldanor/hdf5-rust/", features = ["deprecated", "static", "hl"] }

@@ -1,0 +1,8 @@
+[package]
+name = "hdf-eos5-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hdf-eos5-sys = { path = "hdf-eos5-sys" }
+# hdf5-sys = { git = "https://github.com/aldanor/hdf5-rust/", features = ["deprecated", "static", "hl"] }
